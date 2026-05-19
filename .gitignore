@@ -1,0 +1,10 @@
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.env
+data/venue_profiles/*.json
+*.egg-info/
+dist/
+build/
+.pytest_cache/

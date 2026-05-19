@@ -8,3 +8,5 @@ data/venue_profiles/*.json
 dist/
 build/
 .pytest_cache/
+installer/output/
+assets/installer_small.bmp

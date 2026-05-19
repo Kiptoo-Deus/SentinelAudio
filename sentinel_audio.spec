@@ -9,8 +9,11 @@ from PyInstaller.utils.hooks import collect_data_files, collect_dynamic_libs
 
 block_cipher = None
 
-# Collect Qt plugins and sounddevice binaries
-sounddevice_binaries = collect_dynamic_libs("sounddevice")
+# sounddevice ships its own PortAudio DLL inside _sounddevice_data
+try:
+    sounddevice_binaries = collect_dynamic_libs("_sounddevice_data")
+except Exception:
+    sounddevice_binaries = []
 
 a = Analysis(
     ["main.py"],
